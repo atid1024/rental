@@ -1,0 +1,18 @@
+package exrentalbook;
+import exrentalbook.config.kafka.KafkaProcessor;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+import org.springframework.cloud.stream.annotation.EnableBinding;
+import org.springframework.cloud.openfeign.EnableFeignClients;
+
+
+@SpringBootApplication
+@EnableBinding(KafkaProcessor.class)
+@EnableFeignClients
+public class 도서관리Application {
+    protected static ApplicationContext applicationContext;
+    public static void main(String[] args) {
+        applicationContext = SpringApplication.run(도서관리Application.class, args);
+    }
+}
